@@ -14,6 +14,7 @@ import { Media,MediaObject } from '@ionic-native/media';
   templateUrl: 'musicplayer.html',
 })
 export class MusicplayerPage {
+  public showToggle:boolean = true;
 	public music={};
 	private songMedia:MediaObject=null;
   private isMusicPaused=false;
@@ -53,6 +54,13 @@ export class MusicplayerPage {
   		this.songMedia.release();
   		this.songMedia=null; 
   	}
+  }
+  showToggleFun(){
+    if(this.showToggle == true){
+      this.showToggle = false;
+    }else{
+      this.showToggle = true;
+    }
   }
 
 }
